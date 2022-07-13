@@ -5,6 +5,14 @@ export function App() {
   const [cep, setCep] = useState('')
   const [getCep, setGetCep] = useState([])
 
+  function erro() {
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'CEP inválido!'
+    })
+  }
+
   function getCepInfo() {
     var date = document.getElementById('numCep').value
     setCep(date)
@@ -12,6 +20,7 @@ export function App() {
     fetch(`https://viacep.com.br/ws/${date}/json/`)
       .then(response => response.json())
       .then(date => setGetCep(date))
+      .catch(err => erro())
   }
   console.log(getCep)
   return (
