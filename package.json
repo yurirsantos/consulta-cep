@@ -1,14 +1,18 @@
 {
   "name": "consulta-cep",
+  "homepage": "https://yurirsantos.github.io/consulta-cep/",
   "private": true,
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
     "axios": "^0.27.2",
+    "gh-pages": "^4.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "sweetalert2": "^11.4.20"
